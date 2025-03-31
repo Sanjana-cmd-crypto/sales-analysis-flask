@@ -3,3 +3,7 @@ PyMySQL==1.1.1
 pandas
 numpy
 scikit-learn
+Flask
+flask-cors
+Flask-SQLAlchemy
+
