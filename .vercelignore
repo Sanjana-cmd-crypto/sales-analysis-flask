@@ -1,11 +1,5 @@
-venv/
-
+.venv/
 __pycache__/
-*.log
-*.csv
-*.json
-node_modules/
 *.pyc
-*.pkl
-*.db
-.DS_Store
+*.pyo
+.vercel/
