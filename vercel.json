@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.9" }
+  "functions": {
+    "api/*": {
+      "runtime": "@vercel/python",
+      "memory": 128
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "/api/app.py"
     }
   ]
 }
+
 
 
   
