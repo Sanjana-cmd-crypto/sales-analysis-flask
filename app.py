@@ -1,11 +1,14 @@
 from flask import Flask, jsonify
-from flask_cors import CORS  # Import CORS
-from waitress import serve   # Import waitress for production server
+from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins="*")  # Allow requests from any origin
+CORS(app)
 
-@app.route('/sales-prediction', methods=['GET'])
+@app.route('/')
+def home():
+    return jsonify({"message": "API is working!"})
+
+@app.route('/sales-prediction')
 def sales_prediction():
     data = {
         "total_sales": 50000,
@@ -14,7 +17,7 @@ def sales_prediction():
     }
     return jsonify(data)
 
-@app.route('/payment-analysis', methods=['GET'])
+@app.route('/payment-analysis')
 def payment_analysis():
     data = [
         {"method": "Credit Card", "sales": 50000, "transactions": 200},
@@ -23,9 +26,6 @@ def payment_analysis():
     ]
     return jsonify(data)
 
-# ✅ Correct method to run Flask on Vercel
-def handler(event, context):
-    return app(event, context)
-
 if __name__ == "__main__":
+    from waitress import serve
     serve(app, host="0.0.0.0", port=8000)
