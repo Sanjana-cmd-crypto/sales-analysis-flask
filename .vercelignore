@@ -1,13 +1,11 @@
 venv/
-*.dll
-__pycache__/
-venv/
-*.pyc
-*.pyo
-*.pyd
-*.ipynb
-database.sql
-*.md
-node_modules/
-.git/
 
+__pycache__/
+*.log
+*.csv
+*.json
+node_modules/
+*.pyc
+*.pkl
+*.db
+.DS_Store
