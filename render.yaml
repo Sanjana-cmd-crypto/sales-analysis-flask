@@ -1,7 +1,11 @@
 services:
   - type: web
-    name: sales-analysis-flask
+    name: sales-analysis-api
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python app.py"
-    envVars: []
+    envVars:
+      - key: PORT
+        value: 10000
+
